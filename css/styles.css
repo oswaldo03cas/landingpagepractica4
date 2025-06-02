@@ -1,0 +1,638 @@
+/* styles.css - Estilos unificados para la institución educativa */
+
+/* ===== VARIABLES Y ESTILOS GENERALES ===== */
+:root {
+  /* Colores principales */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+  
+  /* Escala de grises */
+  --light-color: #ecf0f1;
+  --dark-color: #2c3e50;
+  --text-color: #333;
+  --text-light: #7f8c8d;
+  --border-color: #ddd;
+}
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--secondary-color);
+}
+
+/* ===== ESTILOS PARA PÁGINA INSTITUCIONAL ===== */
+
+/* Header Institucional */
+.institutional-header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo-institucional {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 50px;
+  margin-right: 15px;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.logo-text span {
+  color: var(--secondary-color);
+}
+
+.institutional-header nav ul {
+  display: flex;
+  list-style: none;
+}
+
+.institutional-header nav ul li {
+  margin-left: 30px;
+}
+
+.institutional-header nav ul li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.institutional-header nav ul li a:hover {
+  color: var(--secondary-color);
+}
+
+/* Hero Institucional */
+.institutional-hero {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+}
+
+.institutional-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.institutional-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+/* Sección Misión/Visión */
+.mission-vision {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+.mission-card, .vision-card {
+  background-color: var(--light-color);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.mission-card h3, .vision-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+/* Historia */
+.history-section {
+  padding: 80px 0;
+  background-color: #f5f5f5;
+}
+
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background-color: var(--secondary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.timeline-item:nth-child(odd) {
+  padding-right: 50%;
+  text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+  padding-left: 50%;
+  text-align: left;
+}
+
+.timeline-year {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  background-color: var(--secondary-color);
+  color: white;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.timeline-item:nth-child(odd) .timeline-year {
+  right: -120px;
+}
+
+.timeline-item:nth-child(even) .timeline-year {
+  left: -120px;
+}
+
+.timeline-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Instalaciones */
+.facilities {
+  padding: 80px 0;
+  background-color: white;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.facility-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.facility-card:hover {
+  transform: translateY(-10px);
+}
+
+.facility-img {
+  height: 200px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+}
+
+.facility-info {
+  padding: 20px;
+  background-color: white;
+}
+
+.facility-info h3 {
+  margin-bottom: 10px;
+  color: var(--primary-color);
+}
+
+/* Footer Institucional */
+.institutional-footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 50px 0 20px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.footer-column h3 {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #bdc3c7;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: white;
+}
+
+.copyright {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #bdc3c7;
+  font-size: 0.9rem;
+}
+
+/* ===== ESTILOS PARA FORMULARIO DE REGISTRO ===== */
+
+/* Header del Formulario */
+.form-header {
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px 0;
+}
+
+.form-header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.form-logo span {
+  color: var(--secondary-color);
+}
+
+.back-link {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Contenedor Principal del Formulario */
+.registration-container {
+  display: flex;
+  min-height: calc(100vh - 80px);
+}
+
+.form-image {
+  flex: 1;
+  background-image: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  display: none;
+}
+
+.form-content {
+  flex: 1;
+  padding: 40px 0;
+  background-color: #f5f7fa;
+}
+
+/* Estilos del Formulario */
+.registration-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-title h2 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.form-title p {
+  color: var(--text-light);
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.form-label.required::after {
+  content: ' *';
+  color: var(--error-color);
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.form-control.error {
+  border-color: var(--error-color);
+}
+
+.error-message {
+  color: var(--error-color);
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.error-message.show {
+  display: block;
+}
+
+/* Select personalizado */
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper::after {
+  content: '▼';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.form-select {
+  appearance: none;
+  background-color: white;
+}
+
+/* Radio buttons y checkboxes */
+.form-radio-group, .form-checkbox-group {
+  margin-top: 10px;
+}
+
+.radio-option, .checkbox-option {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.radio-option input, .checkbox-option input {
+  margin-right: 10px;
+}
+
+/* Botón de enviar */
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Mensaje de éxito */
+.success-message {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(46, 204, 113, 0.1);
+  border: 1px solid var(--success-color);
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.success-message.show {
+  display: block;
+}
+
+.success-message h3 {
+  color: var(--success-color);
+  margin-bottom: 10px;
+}
+
+/* Progress steps (opcional) */
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.progress-steps::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--border-color);
+  z-index: 1;
+}
+
+.step {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  position: relative;
+  z-index: 2;
+}
+
+.step.active {
+  background-color: var(--secondary-color);
+}
+
+.step.completed {
+  background-color: var(--success-color);
+}
+
+/* ===== MEDIA QUERIES RESPONSIVE ===== */
+@media (max-width: 768px) {
+  /* Estilos generales responsive */
+  .header-content, .form-header-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo-institucional, .form-logo {
+    margin-bottom: 15px;
+  }
+
+  .institutional-hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Timeline responsive */
+  .timeline::before {
+    left: 30px;
+  }
+
+  .timeline-item:nth-child(odd),
+  .timeline-item:nth-child(even) {
+    padding-left: 80px;
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .timeline-item:nth-child(odd) .timeline-year,
+  .timeline-item:nth-child(even) .timeline-year {
+    left: -80px;
+    right: auto;
+  }
+
+  /* Formulario responsive */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .registration-form {
+    padding: 30px 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .form-image {
+    display: block;
+  }
+}
